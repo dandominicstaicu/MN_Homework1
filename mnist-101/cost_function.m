@@ -3,7 +3,7 @@ function [J, grad] = cost_function(params, X, y, lambda, ...
                    output_layer_size)
 
 % COST_FUNCTION Implements the neural network cost function and gradient for a two-layer neural network
-% [J, grad] = cost_function(params, X, y, lambda, input_layer_size, hidden_layer_size, output_layer_size) computes 
+% [J, grad] = cost_function(params, X, y, lambda, input_layer_size, hidden_layer_size, output_layer_size) computes
 % the cost and gradient of the neural network. The parameters for the neural network are "unrolled" into the 
 % vector params and need to be converted back into the weight matrices. The returned parameter grad should be a 
 % "unrolled" vector of the partial derivatives of the neural network.
