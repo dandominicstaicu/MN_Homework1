@@ -17,8 +17,8 @@ function [Y, InitialMatrix] = parse_csv_file(file_path)
 		args = strsplit(line, ',');
 		[n m] = size(args);
 
-		Y(i) = str2num(args{1,1});
-		for k = 2:m
+		Y(i) = str2num(args{1, 1});
+		for k = 2 : m
 			InitialMatrix{i, j} = args{1, k};
 			j++;
 		endfor

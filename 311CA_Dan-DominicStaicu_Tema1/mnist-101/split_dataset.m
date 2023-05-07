@@ -1,4 +1,3 @@
-% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [X_train, y_train, X_test, y_test] = split_dataset(X, y, percent)
 	m = size(X, 1);
 

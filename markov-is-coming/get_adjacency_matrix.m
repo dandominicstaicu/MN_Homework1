@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [Adj] = get_adjacency_matrix(Labyrinth)
 	#get the size of labyrinth
   	[n, m] = size(Labyrinth);

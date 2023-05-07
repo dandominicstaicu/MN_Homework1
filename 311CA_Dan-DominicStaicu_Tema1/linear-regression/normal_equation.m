@@ -1,6 +1,5 @@
 function [Theta] = normal_equation(FeaturesMatrix, Y, tol, iter)
 
-
 	% Init the values
 	[m, n] = size(FeaturesMatrix);
 	new_mat = [zeros(m, 1) FeaturesMatrix];

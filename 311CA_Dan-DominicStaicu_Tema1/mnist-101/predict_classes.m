@@ -1,4 +1,3 @@
-% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [classes] = predict_classes(X, weights, ...
                   input_layer_size, hidden_layer_size, ...
                   output_layer_size)
@@ -25,3 +24,4 @@ hypothesis = sigmoid(z3);
 [~, classes] = max(hypothesis, [], 2);
 
 endfunction
+

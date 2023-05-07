@@ -1,2 +1,0 @@
-QSocketNotifier: Can only be used with threads started with QThread
-error: ignoring const interrupt_exception& while preparing to exit

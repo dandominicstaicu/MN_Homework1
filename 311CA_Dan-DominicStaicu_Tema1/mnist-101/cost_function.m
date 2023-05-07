@@ -1,7 +1,13 @@
-% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [J, grad] = cost_function(params, X, y, lambda, ...
                    input_layer_size, hidden_layer_size, ...
                    output_layer_size)
+
+% COST_FUNCTION Implements the neural network cost function and gradient for a two-layer neural network
+% [J, grad] = cost_function(params, X, y, lambda, input_layer_size, hidden_layer_size, output_layer_size) computes
+% the cost and gradient of the neural network. The parameters for the neural network are "unrolled" into the 
+% vector params and need to be converted back into the weight matrices. The returned parameter grad should be a 
+% "unrolled" vector of the partial derivatives of the neural network.
+%
 % params -> vector containing the weights from the two matrices
 %           Theta1 and Theta2 in an unrolled form (as a column vector)
 % X -> the feature matrix containing the training examples
@@ -12,6 +18,7 @@ function [J, grad] = cost_function(params, X, y, lambda, ...
 %
 % J -> the cost function for the current parameters
 % grad -> a column vector with the same length as params
+% These will be used for optimization using fmincg
 
 	theta_sep = hidden_layer_size * (input_layer_size + 1);
 

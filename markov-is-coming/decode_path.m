@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [decoded_path] = decode_path (path, lines, cols)
 	% path -> vector containing the order of the states that arrived
 	% 		 to a winning position
@@ -5,7 +6,7 @@ function [decoded_path] = decode_path (path, lines, cols)
 	% cols -> number of columns
 	
 	% decoded_path -> vector of pairs (line_index, column_index)
-  %                 corresponding to path states
+  	%                 corresponding to path states
   	len = length(path) - 1;
 	decoded_path = zeros(len, 2);
 
