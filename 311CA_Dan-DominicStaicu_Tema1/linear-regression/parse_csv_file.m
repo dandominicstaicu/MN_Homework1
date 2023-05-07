@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [Y, InitialMatrix] = parse_csv_file(file_path)
 	csv_file = fopen(file_path, 'r');
 

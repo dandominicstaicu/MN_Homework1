@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [Labyrinth] = parse_labyrinth(file_path)
 	% open the given file, read from it and lastly close it
 	

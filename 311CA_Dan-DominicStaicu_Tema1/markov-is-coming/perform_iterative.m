@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [x, err, steps] = perform_iterative(G, c, x0, tol, max_steps)
 	% perform the iterative Jacobi algorithm
 

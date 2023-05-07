@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [FeatureMatrix] = prepare_for_regression(InitialMatrix)
 	[n m] = size(InitialMatrix);
 	% init the new matrix with one more column

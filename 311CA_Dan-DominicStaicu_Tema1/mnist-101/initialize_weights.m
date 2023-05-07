@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [matrix] = initialize_weights(L_prev, L_next)
   	eps_0 = sqrt(6) / sqrt(L_prev + L_next);
 

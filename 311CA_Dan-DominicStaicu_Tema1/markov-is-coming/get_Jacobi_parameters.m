@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [G, c] = get_Jacobi_parameters(Link)
 
 	% split the matrix into G and c

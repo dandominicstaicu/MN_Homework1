@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [Theta] = gradient_descent(FeatureMatrix, Y, n, m, alpha, iter)
 	% FeatureMatrix -> the matrix with all training examples
 	% Y -> the vector with all actual values

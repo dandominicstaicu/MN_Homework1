@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [Error] = linear_regression_cost_function(Theta, Y, FeatureMatrix)
   % Theta -> the vector of weights
   % Y -> the vector with all actual values

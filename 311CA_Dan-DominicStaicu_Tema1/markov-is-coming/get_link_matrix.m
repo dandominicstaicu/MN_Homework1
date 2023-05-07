@@ -1,3 +1,4 @@
+% Copyright (c) 2023 Dan-Dominic Staicu 311CAb
 function [Link] = get_link_matrix(Labyrinth)
 
 	adj_mat = get_adjacency_matrix(Labyrinth);

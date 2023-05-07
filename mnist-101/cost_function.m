@@ -33,27 +33,37 @@ function [J, grad] = cost_function(params, X, y, lambda, ...
 	a2 = [ones(size(z2, 1), 1) sigmoid(z2)];
 	% calculate the activations and outputs of the output layer
 	z3 = a2 * theta2';
-	hypothesis = sigmoid(z3);
+	sig_z3 = sigmoid(z3);
 
 	% Calculate cost
 	J = 0.00000;
+	
+	square_sum1 = sum(sum(theta1(:, 2 : end) .^ 2));
+	square_sum2 = sum(sum(theta2(:, 2 : end) .^ 2));
+
 	% calculate the cost using the cross-entropy loss function
-	J = (-1 / m) * sum(sum(y_matrix .* log(hypothesis) + (1 - y_matrix) .* log(1 - hypothesis))) + ...
-		(lambda / (2 * m)) * (sum(sum(theta1(:, 2 : end) .^ 2)) + sum(sum(theta2(:, 2 : end) .^ 2)));
+	J = (-1 / m) * sum(sum(y_matrix .* log(sig_z3) + (1 - y_matrix) .* log(1 - sig_z3))) + ...
+		(lambda / (2 * m)) * (square_sum1 + square_sum2);
 
 	% Back propagation
 	% compute the error of the output layer
-	delta3 = hypothesis - y_matrix;
+	diference = sig_z3 - y_matrix;
 	% calculate the derivate of the sigmoid function for the activations of the hidden layer
 	sigmoid_gradient_z2 = sigmoid(z2) .* (1 - sigmoid(z2));
 	% calculate the error of the hidden layer
-	delta2 = (delta3 * theta2) .* [ones(size(z2, 1), 1) sigmoid_gradient_z2];
+	delta2 = (diference * theta2) .* [ones(size(z2, 1), 1) sigmoid_gradient_z2];
 	% remove the error corresponding to the bias unit of the hidden layer
 	delta2 = delta2(:, 2 : end);
 
+	lam_rap = lambda / m;
+	m_rap = 1 / m;
+
+	ext_theta1 = [zeros(size(theta1, 1), 1) theta1(:, 2 : end)];
+	ext_theta2 = [zeros(size(theta2, 1), 1) theta2(:, 2 : end)];
+
 	% Calculate the gradients
-	Theta1_grad = (1 / m) * (delta2' * a1) + (lambda / m) * [zeros(size(theta1, 1), 1) theta1(:, 2 : end)];
-	Theta2_grad = (1 / m) * (delta3' * a2) + (lambda / m) * [zeros(size(theta2, 1), 1) theta2(:, 2 : end)];
+	Theta1_grad = m_rap * (delta2' * a1) + lam_rap * ext_theta1;
+	Theta2_grad = m_rap * (diference' * a2) + lam_rap * ext_theta2;
 
 	% Unroll gradients into a single vector
 	grad = [Theta1_grad(:); Theta2_grad(:)];

@@ -19,9 +19,9 @@ a1 = [ones(m, 1) X];
 z2 = a1 * theta1';
 a2 = [ones(size(z2, 1), 1) sigmoid(z2)];
 z3 = a2 * theta2';
-hypothesis = sigmoid(z3);
+h_z3= sigmoid(z3);
 
 % Return the predicted classes
-[~, classes] = max(hypothesis, [], 2);
+[~, classes] = max(h_z3, [], 2);
 
 endfunction
